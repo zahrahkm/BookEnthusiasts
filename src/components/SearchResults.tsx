@@ -18,16 +18,14 @@ export const SearchResults = ({
   isLoading,
   isError,
 }: SearchResultsProps) => {
-  if (isError) {
-    return <Error />;
+  if (isLoading) {
+    return <LoadingState items={3} itemHeight="h-80" mdCols={3} />;
   }
-
   if (!isLoading && (!books || books.length === 0)) {
     return <SearchNotFound />;
   }
-
-  if (isLoading) {
-    return <LoadingState items={3} itemHeight="h-80" mdCols={3} />;
+  if (isError) {
+    return <Error />;
   }
 
   return (

@@ -13,7 +13,7 @@ export const HomePage = () => {
     isLoading: isLoadingSearch,
     isError,
   } = useSearchBooks(searchQuery);
-
+  console.log(searchResults);
   return (
     <>
       <HeroBanner />
