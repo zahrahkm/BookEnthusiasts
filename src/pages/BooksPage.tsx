@@ -17,7 +17,7 @@ export const BooksPage = () => {
     <Container>
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Popular Books</h1>
       <div className="bg-white shadow overflow-hidden sm:rounded-md">
-        <ul role="list" className="divide-y divide-gray-200">
+        <ul className="divide-y divide-gray-200">
           {books?.map((book) => (
             <li
               key={book.id}

@@ -2,7 +2,6 @@ import React from "react";
 import { Book } from "../types/Book";
 import BookCard from "./BookCard";
 import { Container } from "./Container";
-import { LoadingState } from "./LoadingState";
 
 interface BookListProps {
   title: string;
