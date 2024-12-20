@@ -11,6 +11,7 @@ export const useLatestBooks = () => {
   return useQuery<Book[]>({
     queryKey: ["books", "latest"],
     queryFn: () => fetchLatestBooks(3),
+    staleTime: 1000 * 60 * 5,
   });
 };
 
@@ -20,6 +21,7 @@ export const useSearchBooks = (searchTerm: string | null) => {
     queryFn: () => searchBooks(searchTerm || "", 9),
     enabled: !!searchTerm && searchTerm.trim().length > 0,
     retry: false,
+    staleTime: 1000 * 60 * 5,
   });
 };
 
@@ -27,6 +29,7 @@ export const usePopularBooks = () => {
   return useQuery<Book[]>({
     queryKey: ["books", "popular"],
     queryFn: () => fetchPopularBooks(10),
+    staleTime: 1000 * 60 * 5,
   });
 };
 
@@ -35,5 +38,6 @@ export const useBookDetails = (bookId: string) => {
     queryKey: ["book", bookId],
     queryFn: () => fetchBookDetails(bookId),
     enabled: !!bookId,
+    staleTime: 1000 * 60 * 5,
   });
 };

@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
-import { useSearchBooks } from "../hooks/useBooks";
 import { HeroBanner } from "../components/hero";
 import { SearchResults } from "../components/SearchResults";
 import LatestBooks from "../components/LatestBooks";
+import { useSearchBooks } from "../hooks/useBooks";
 
 export const HomePage = () => {
   const [searchParams] = useSearchParams();
@@ -13,7 +13,7 @@ export const HomePage = () => {
     isLoading: isLoadingSearch,
     isError,
   } = useSearchBooks(searchQuery);
-  console.log(searchResults);
+
   return (
     <>
       <HeroBanner />
