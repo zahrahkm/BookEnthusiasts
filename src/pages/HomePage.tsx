@@ -24,6 +24,7 @@ export const HomePage = () => {
           books={searchResults}
           isLoading={isLoadingSearch}
           isError={isError}
+          aria-label="Latest book releases"
         />
       )}
 
